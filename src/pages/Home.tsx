@@ -7,15 +7,15 @@ const Home = () => {
   
   const aboutText = {
     math: (
-    <> I am currently a masters student in my second year at the <a
+    <> I am currently a Masters student in my second year at the <a
     href="https://www.uni-bonn.de/en"
     className="text-inherit no-underline hover:underline hover:opacity-80 transition-all"
   target="_blank"
   rel="noopener noreferrer"
   > University of Bonn
-</a>. Broadly 
+</a>. Broadly, 
 I enjoy Stable Homotopy Theory and Algebraic Geometry as well as their interactions.
-At the moment I am trying to learn about Chromatic Homotopy Theory. 
+At the moment, I am trying to learn about Chromatic Homotopy Theory. 
     </>
   ),  
   corporate: (
