@@ -19,7 +19,7 @@ At the moment, I am trying to learn about Chromatic Homotopy Theory.
     </>
   ),  
   corporate: (
-    <> I work part-time at the agentic AI startup{" "}
+    <> I work part-time at an agentic AI startup{" "}
     <a
   href="https://omvi.ai"
   className="text-inherit no-underline hover:underline hover:opacity-80 transition-all"
