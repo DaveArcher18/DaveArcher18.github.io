@@ -5,9 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/', // Ensure correct asset paths
+  base: '/DaveArcher18.github.io/', // 👈 REQUIRED for GitHub Pages to correctly resolve assets
   build: {
-    outDir: 'docs', // 👈 Output to "docs" folder for GitHub Pages
+    outDir: 'dist', // 👈 Standard for GitHub Actions deployment via gh-pages
   },
   server: {
     host: "::",
