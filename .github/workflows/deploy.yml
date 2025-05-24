@@ -1,4 +1,4 @@
-name: Deploy Vite site to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -12,12 +12,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -26,17 +24,16 @@ jobs:
       - name: Install dependencies
         run: npm ci --force
 
-      - name: Create _redirects file
-        run: echo "/* /index.html 200" > public/_redirects
-
-      - name: Build the site
+      - name: Build
         run: |
           npm run build
-          # Ensure _redirects is copied to dist
-          cp public/_redirects dist/
-          cp public/404.html dist/
+          # Copy 404.html to the root of the dist directory
+          cp 404.html dist/
+          # Create .nojekyll to prevent Jekyll processing
+          touch dist/.nojekyll
           ls -la dist/
-      
+
+
       - name: Verify build output
         run: |
           if [ ! -f "dist/index.html" ]; then
@@ -45,13 +42,15 @@ jobs:
             exit 1
           fi
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true
-          keep_files: false
-          enable_jekyll: false
-          cname: davearcher18.github.io
-          exclude_assets: ''
+          folder: dist
+          branch: gh-pages
+          clean: true
+          clean-exclude: |
+            .git
+            .github
+            .gitignore
+          single-commit: true
+          commit-message: "Deploy: $(date +'%Y-%m-%d %H:%M:%S')"
