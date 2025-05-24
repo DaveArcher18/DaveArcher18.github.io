@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch all history for tags and commits
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -26,11 +26,16 @@ jobs:
       - name: Install dependencies
         run: npm ci --force
 
+      - name: Create _redirects file
+        run: echo "/* /index.html 200" > public/_redirects
+
       - name: Build the site
         run: |
           npm run build
+          # Ensure _redirects is copied to dist
+          cp public/_redirects dist/
+          cp public/404.html dist/
           ls -la dist/
-
       
       - name: Verify build output
         run: |
@@ -45,7 +50,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          force_orphan: true  # Ensures a clean deploy
-          keep_files: false   # Removes old files
-          enable_jekyll: false  # Important for SPAs
+          force_orphan: true
+          keep_files: false
+          enable_jekyll: false
           cname: davearcher18.github.io
+          exclude_assets: ''

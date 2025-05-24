@@ -5,14 +5,21 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/', // Simplified base URL
+  base: '/',
   build: {
     outDir: 'dist',
-    emptyOutDir: true, // Ensure clean builds
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        404: path.resolve(__dirname, 'public/404.html')
+      }
+    }
   },
   server: {
     host: "::",
     port: 8080,
+    historyApiFallback: true
   },
   plugins: [
     react(),
