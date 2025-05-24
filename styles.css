@@ -1,0 +1,578 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: all 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Default Maths Persona - Light Mode */
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.0)), 
+                url('assets/maths_me.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* Mathematical equations overlay for maths persona */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    background-image: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><style>.math{font-family:Times,serif;fill:black;opacity:0.3}</style></defs><text class="math" x="50" y="100" font-size="24">∑ₙ₌₁^∞ 1/n² = π²/6</text><text class="math" x="300" y="150" font-size="20">∫₋∞^∞ e^(-x²) dx = √π</text><text class="math" x="100" y="250" font-size="18">lim(x→0) sin(x)/x = 1</text><text class="math" x="450" y="200" font-size="22">e^(iπ) + 1 = 0</text><text class="math" x="200" y="350" font-size="16">∇²φ = ρ/ε₀</text><text class="math" x="600" y="120" font-size="20">d/dx[f(g(x))] = f′(g(x))⋅g′(x)</text><text class="math" x="50" y="450" font-size="18">∂²u/∂t² = c²∇²u</text><text class="math" x="400" y="400" font-size="24">λx.λy.x(y)</text><text class="math" x="700" y="300" font-size="16">Hom(A⊗B,C) ≅ Hom(A,Hom(B,C))</text><text class="math" x="150" y="550" font-size="20">π₁(S¹) ≅ ℤ</text><text class="math" x="500" y="500" font-size="18">χ(M) = ∑(-1)ⁱ dim Hⁱ(M)</text><text class="math" x="800" y="450" font-size="16">Spec(A⊗B) = Spec(A) × Spec(B)</text><text class="math" x="250" y="650" font-size="22">K₀(X) ≅ [X, BU×ℤ]</text><text class="math" x="650" y="600" font-size="18">Ext¹(A,B) = 0 ⟹ Hom(-,B) exact</text></svg>');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* Corporate Persona - Dark Mode */
+body.corporate-mode {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('assets/corporate_me.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+/* Hide math equations in corporate mode */
+body.corporate-mode::before {
+    display: none;
+}
+
+/* Main container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.corporate-mode .navigation {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+body.corporate-mode .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+body.corporate-mode .nav-link:hover,
+body.corporate-mode .nav-link.active {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+}
+
+.persona-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    white-space: nowrap;
+}
+
+body.corporate-mode .persona-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.persona-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+body.corporate-mode .persona-btn:hover {
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Main content */
+.main-content {
+    min-height: 70vh;
+}
+
+.page {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Content styling */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #4a5db8 0%, #5d4a8a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.corporate-mode h1 {
+    background: linear-gradient(135deg, #d63031 0%, #e17055 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+body.corporate-mode h2 {
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+body.corporate-mode h3 {
+    color: #ffffff;
+}
+
+/* Content cards */
+.content-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    color: #333;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.corporate-mode .content-card {
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+body.corporate-mode .content-card:hover {
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Persona content switching */
+.persona-content {
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.persona-content.active {
+    display: block;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Item headers */
+.item-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.item-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 0.75rem;
+    border-radius: 10px;
+    min-width: 3rem;
+    text-align: center;
+}
+
+body.corporate-mode .icon {
+    background: rgba(255, 107, 107, 0.2);
+}
+
+.year {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+body.corporate-mode .year {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.status {
+    color: #667eea;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+}
+
+body.corporate-mode .status {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.2);
+}
+
+/* Section styling */
+.section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+body.corporate-mode .section-title {
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 107, 107, 0.5);
+}
+
+/* Links */
+a {
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+body.corporate-mode a {
+    color: #ff9f43;
+}
+
+a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.external-link {
+    font-size: 0.8rem;
+    margin-left: 0.25rem;
+    opacity: 0.7;
+}
+
+/* Workshop list */
+.workshop-list {
+    list-style: none;
+}
+
+.workshop-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 1rem;
+}
+
+body.corporate-mode .workshop-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.workshop-list li:last-child {
+    border-bottom: none;
+}
+
+.workshop-title {
+    flex: 1;
+}
+
+.workshop-details {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+body.corporate-mode .workshop-details {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.empty-state {
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+    text-align: center;
+    padding: 2rem;
+}
+
+body.corporate-mode .empty-state {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Navigation item visibility */
+.nav-link.hidden {
+    display: none !important;
+}
+
+/* Enhanced Mobile Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .navigation {
+        padding: 1rem 1.5rem;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Fix for mobile */
+    }
+    
+    body.corporate-mode {
+        background-attachment: scroll;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .nav-links {
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .persona-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .content-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .item-header {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .item-content {
+        gap: 0.75rem;
+    }
+    
+    .workshop-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .workshop-details {
+        white-space: normal;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.75rem;
+    }
+    
+    .navigation {
+        padding: 1rem 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 0.75rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    .persona-btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .content-card {
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .icon {
+        font-size: 1.25rem;
+        padding: 0.5rem;
+        min-width: 2.5rem;
+    }
+    
+    .section {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+    .nav-link, .persona-btn, a {
+        min-height: 44px; /* Apple's recommended touch target size */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-link {
+        min-width: 80px;
+    }
+}
+
+/* Landscape phone optimization */
+@media (max-width: 896px) and (orientation: landscape) {
+    .navigation {
+        flex-direction: row;
+        padding: 0.75rem 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .nav-links {
+        gap: 0.75rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    .persona-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    h1 {
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+    }
+} 
