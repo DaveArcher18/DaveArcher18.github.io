@@ -10,11 +10,11 @@
     --orange: #ff9d2e;
     --pink: #ff5d7d;
     --blue: #6759ff;
-    --shadow: 0 24px 70px rgba(23, 17, 33, 0.12);
+    --shadow: 0 16px 42px rgba(23, 17, 33, 0.08);
     --radius-large: 32px;
     --radius-medium: 22px;
     --radius-small: 14px;
-    --max-width: 1180px;
+    --max-width: 1100px;
 }
 
 * {
@@ -31,7 +31,7 @@ body {
     background: var(--paper);
     color: var(--ink);
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height: 1.6;
+    line-height: 1.66;
 }
 
 body::before {
@@ -40,8 +40,8 @@ body::before {
     inset: 0;
     z-index: -2;
     background:
-        radial-gradient(circle at top left, rgba(255, 157, 46, 0.18), transparent 32rem),
-        radial-gradient(circle at 85% 10%, rgba(103, 89, 255, 0.14), transparent 30rem),
+        radial-gradient(circle at top left, rgba(255, 157, 46, 0.11), transparent 30rem),
+        radial-gradient(circle at 85% 10%, rgba(103, 89, 255, 0.09), transparent 28rem),
         linear-gradient(180deg, #fffaf5 0%, #f7f1eb 48%, #fbf8f4 100%);
 }
 
@@ -72,21 +72,21 @@ img {
     overflow: hidden;
     color: #fff;
     background:
-        radial-gradient(circle at 76% 18%, rgba(255, 157, 46, 0.38), transparent 16rem),
-        radial-gradient(circle at 85% 72%, rgba(255, 93, 125, 0.24), transparent 22rem),
+        radial-gradient(circle at 76% 18%, rgba(255, 157, 46, 0.26), transparent 15rem),
+        radial-gradient(circle at 85% 72%, rgba(255, 93, 125, 0.16), transparent 20rem),
         linear-gradient(135deg, #1b0f25 0%, #2a1436 48%, #120a19 100%);
 }
 
 .site-header::after {
     content: "";
     position: absolute;
-    inset: auto -12rem -20rem auto;
-    width: 42rem;
-    height: 42rem;
+    inset: auto -10rem -18rem auto;
+    width: 34rem;
+    height: 34rem;
     border-radius: 999px;
     background: linear-gradient(135deg, rgba(255, 157, 46, 0.75), rgba(255, 93, 125, 0.6), rgba(103, 89, 255, 0.55));
     filter: blur(36px);
-    opacity: 0.6;
+    opacity: 0.42;
     transform: rotate(-18deg);
 }
 
@@ -104,13 +104,13 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
-    padding: 1.35rem 0;
+    gap: 1.25rem;
+    padding: 1.2rem 0;
 }
 
 .brand {
-    font-weight: 800;
-    letter-spacing: -0.03em;
+    font-weight: 750;
+    letter-spacing: -0.02em;
     text-decoration: none;
 }
 
@@ -125,7 +125,7 @@ img {
 .nav-links a {
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 999px;
-    padding: 0.55rem 0.85rem;
+    padding: 0.5rem 0.78rem;
     color: rgba(255, 255, 255, 0.82);
     font-size: 0.92rem;
     text-decoration: none;
@@ -143,9 +143,9 @@ img {
     z-index: 1;
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
-    gap: 3rem;
+    gap: 2.25rem;
     align-items: end;
-    padding: 6rem 0 7rem;
+    padding: 4.8rem 0 5.6rem;
 }
 
 .hero-copy {
@@ -155,7 +155,7 @@ img {
 .eyebrow {
     margin-bottom: 1rem;
     color: #a8492c;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -169,28 +169,28 @@ h1,
 h2,
 h3 {
     margin: 0;
-    line-height: 1.08;
-    letter-spacing: -0.045em;
+    line-height: 1.12;
+    letter-spacing: -0.028em;
 }
 
 h1 {
-    max-width: 860px;
-    font-size: clamp(3rem, 7vw, 6.8rem);
+    max-width: 740px;
+    font-size: clamp(2.35rem, 5vw, 4.8rem);
 }
 
 h2 {
-    font-size: clamp(2.2rem, 4vw, 4.4rem);
+    font-size: clamp(1.85rem, 3vw, 3rem);
 }
 
 h3 {
-    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-size: clamp(1.08rem, 1.5vw, 1.28rem);
 }
 
 .hero-intro {
     max-width: 720px;
-    margin-top: 1.35rem;
+    margin-top: 1.15rem;
     color: rgba(255, 255, 255, 0.82);
-    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    font-size: clamp(1rem, 1.35vw, 1.14rem);
 }
 
 .hero-actions,
@@ -202,17 +202,17 @@ h3 {
 }
 
 .hero-actions {
-    margin-top: 2rem;
+    margin-top: 1.65rem;
 }
 
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
+    min-height: 44px;
     border-radius: 999px;
-    padding: 0.75rem 1.15rem;
-    font-weight: 800;
+    padding: 0.68rem 1rem;
+    font-weight: 750;
     text-decoration: none;
 }
 
@@ -233,8 +233,7 @@ h3 {
 
 .hero-card,
 .content-card,
-.feature-card,
-.callout-card {
+.feature-card {
     border: 1px solid var(--line);
     border-radius: var(--radius-medium);
     background: var(--card);
@@ -242,7 +241,7 @@ h3 {
 }
 
 .hero-card {
-    padding: 1.5rem;
+    padding: 1.35rem;
     color: #fff;
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.16);
@@ -252,8 +251,8 @@ h3 {
 .card-kicker {
     margin-bottom: 0.7rem;
     color: #9b3450;
-    font-size: 0.78rem;
-    font-weight: 800;
+    font-size: 0.74rem;
+    font-weight: 750;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
@@ -264,7 +263,7 @@ h3 {
 
 .highlight-list {
     display: grid;
-    gap: 0.9rem;
+    gap: 0.72rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -288,23 +287,23 @@ h3 {
 }
 
 .section {
-    padding: 6rem 0 0;
+    padding: 5rem 0 0;
 }
 
 .section-heading {
     max-width: 790px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.65rem;
 }
 
 .section-heading p {
     margin-top: 1rem;
     color: var(--ink-soft);
-    font-size: 1.08rem;
+    font-size: 1rem;
 }
 
 .card-grid {
     display: grid;
-    gap: 1rem;
+    gap: 0.9rem;
 }
 
 .three-columns {
@@ -316,31 +315,29 @@ h3 {
 }
 
 .content-card,
-.feature-card,
-.callout-card {
-    padding: 1.45rem;
+.feature-card {
+    padding: 1.28rem;
 }
 
 .content-card {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.7rem;
 }
 
 .content-card p,
-.feature-card p,
-.callout-card p {
+.feature-card p {
     color: var(--ink-soft);
 }
 
 .accent-section {
     width: 100%;
     max-width: none;
-    margin-top: 6rem;
-    padding: 6rem max(20px, calc((100vw - var(--max-width)) / 2));
+    margin-top: 5rem;
+    padding: 5rem max(20px, calc((100vw - var(--max-width)) / 2));
     color: #fff;
     background:
-        radial-gradient(circle at 15% 15%, rgba(255, 157, 46, 0.2), transparent 24rem),
+        radial-gradient(circle at 15% 15%, rgba(255, 157, 46, 0.14), transparent 22rem),
         linear-gradient(135deg, #21102d, #120a19);
 }
 
@@ -356,24 +353,24 @@ h3 {
 .principles {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 0.9rem;
 }
 
 .principles article {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-medium);
-    padding: 1.35rem;
+    padding: 1.18rem;
     background: rgba(255, 255, 255, 0.06);
 }
 
 .principles h3 {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.65rem;
 }
 
 .feature-card {
     display: flex;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1.25rem;
     align-items: flex-start;
     margin-bottom: 1rem;
     background:
@@ -402,9 +399,9 @@ h3 {
 .link-row a,
 .contact-links a {
     border-radius: 999px;
-    padding: 0.45rem 0.75rem;
+    padding: 0.42rem 0.7rem;
     background: var(--paper-muted);
-    font-weight: 800;
+    font-weight: 750;
     text-decoration: none;
 }
 
@@ -423,7 +420,7 @@ h3 {
     border-radius: var(--radius-small);
     padding: 1rem 1.1rem;
     background: var(--card);
-    box-shadow: 0 12px 35px rgba(23, 17, 33, 0.06);
+    box-shadow: 0 10px 28px rgba(23, 17, 33, 0.05);
     text-decoration: none;
 }
 
@@ -456,25 +453,8 @@ h3 {
     white-space: nowrap;
 }
 
-.split-section {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.6fr);
-    gap: 2rem;
-    align-items: center;
-}
-
-.callout-card {
-    background:
-        radial-gradient(circle at top right, rgba(255, 157, 46, 0.15), transparent 12rem),
-        #fff;
-}
-
-.callout-card .button {
-    margin-top: 1.25rem;
-}
-
 .contact-section {
-    padding-bottom: 6rem;
+    padding-bottom: 5rem;
 }
 
 .contact-links {
@@ -502,8 +482,7 @@ h3 {
 }
 
 @media (max-width: 940px) {
-    .hero,
-    .split-section {
+    .hero {
         grid-template-columns: 1fr;
     }
 
@@ -574,7 +553,6 @@ h3 {
     .hero-card,
     .content-card,
     .feature-card,
-    .callout-card,
     .principles article {
         padding: 1.15rem;
     }

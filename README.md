@@ -2,7 +2,7 @@
 
 A lightweight static personal website for David Bowman, AI Engineer at Elixirr Digital.
 
-The site is designed as a client-facing personal profile: it introduces David's current AI engineering work and interests, while preserving an archive of his previous mathematical writing, seminars, workshops, and public projects.
+The site is designed as a client-facing personal profile: it introduces David's current AI engineering work and interests, while preserving an archive of his previous mathematical writing, seminars, and workshops.
 
 ## Purpose
 
@@ -34,7 +34,6 @@ The site is designed as a client-facing personal profile: it introduces David's 
 - **Past Life As A Mathematician**: publications, seminars, and workshop organisation.
 - **Writing And Notes**: public PDFs and informal mathematical writing.
 - **Conferences And Workshops**: selected mathematical events attended.
-- **Projects**: public project work such as LecToNotes.
 - **Contact**: email and public profile links.
 
 ## Running Locally
