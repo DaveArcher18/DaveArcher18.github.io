@@ -32,7 +32,7 @@ The site is designed as a client-facing personal profile: it introduces David's 
 - **AI Engineering**: general areas of current work and interest.
 - **How I Work**: communication, ownership, collaboration, and adaptability.
 - **Past Life As A Mathematician**: publications, seminars, and workshop organisation.
-- **Writing And Notes**: public PDFs and informal mathematical writing.
+- **Writing And Notes**: public PDFs, thesis work, and informal mathematical writing.
 - **Conferences And Workshops**: selected mathematical events attended.
 - **Contact**: email and public profile links.
 
